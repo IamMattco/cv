@@ -1,2 +1,93 @@
 = render 'head', page_title: 'MattKit default structure'
+
+- courses = [{date: '2012-02 - 2012-03', name: 'Kurs PHP'}, {date: '2016-03 - 2016-04', name: 'Kurs PHP 7'}, {date: '2014-02 - 2014-03', name: 'Kurs Ruby'}, {date: '2014-04 - 2014-05', name: 'Kurs Ruby on Rails'}, {date: '2014-06 - 2014-07', name: 'Kurs JavaScript'}]
+- experiences = [{company_name: 'mrozidlo.net', date: '2010-01', function: 'Webdeveloper', desc: 'Jako freelancer zajmuję się projektowaniem stron WWW, wdrażaniem grafiki do systemu zarządzania treścią WordPress. W trakcie tych 6 lat zajmowałem się również pisaniem aplikacji internetowych przy wykorzystaniu Ruby/Ruby on Rails oraz PHP/Laravel.'}, {company_name: 'Kstech', date: '2014-02 - 2014-08', function: 'Front-end Developer, Junir Back-end Developer', desc: 'Jako stażysta w tej firmie, poznałem język Ruby oraz framework Ruby on Rails. Nauczyłem się pracy w zespole.'}]
+- skills = [{name: 'Adobe Photoshop', level: 'bardzo dobra znajomość'}, {name: 'Adobe Illustrator', level: 'średnia znajomość'}, {name: 'Affinity Designer', level: 'średnia znajomość'}, {name: 'PHP', level: 'dobra znajomość'}, {name: 'Laravel', level: 'dobra znajomość'}, {name: 'Bootstrap', level: 'bardzo dobra znajomość'}, {name: 'Sass/CSS 3', level: 'bardzo dobra znajomość'}, {name: 'Less', level: 'średnia znajomość'}, {name: 'HTML5/HAML/SLIM', level: 'bardzo dobra znajomość'}, {name: 'Git', level: 'dobra znajomość'}, {name: 'Grunt', level: 'dobra znajomość'}, {name: 'Gulp', level: 'dobra znajomość'}, {name: 'JavaScript', level: 'dobra znajomość'}, {name: 'jQuery', level: 'bardzo dobra znajomość'}, {name: 'Postgresql', level: 'dobra znajomość'}, {name: 'MySQL', level: 'dobra znajomość'}, {name: 'Ruby', level: 'dobra znajomość'}, {name: 'Ruby on Rails', level: 'dobra znajomość'}, {name: 'WordPress', level: 'bardzo dobra znajomość'}]
+
 %body
+  .container
+    .row.about-section
+      .four.columns
+        %img{src: '../dist/images/me.png', class: 'responsive-image circle about-image'}
+        %h2
+          Mateusz Mróz
+          %small Webdeveloper
+      .eight.columns
+        %h1 O mnie
+        %p
+          Nazywam się Mateusz Mróz i od ponad 8 lat zajmuję się tworzeniem stron www oraz aplikacji internetowych. Na co dzień zajmuje się wdrażaniem stron internetowych, sklepów, rozwijaniem autorskiego systemu zarządzania treścią jak i prowadzeniem własnej agencji interaktywnej.
+        %hr
+        %p
+          %i.fa.fa-mobile
+          797 799 583
+        %p
+          %i.fa.fa-envelope-o
+          mateusz@mrozidlo.net
+        %p
+          %i.fa.fa-link
+          www.mrozidlo.net
+        %hr
+
+    .row
+      .eight.offset-by-four.columns
+        %h3 Doświadczenie
+    .content
+      - experiences.each do |e|
+        .row
+          .four.columns
+            .company-name
+              = e[:company_name]
+            .date
+              = e[:date]
+          .eight.columns
+            %span.function= e[:function]
+            = e[:desc]
+    .row
+      .eight.offset-by-four.columns
+        %h3 Edukacja
+    .content
+      .row
+        .four.columns
+          .date
+            2008-09 - 2012-05
+        .eight.columns
+          Zespół Szkół nr 5 im. Karola Brzostowskiego w Ełku, Technik Informatyk
+
+    .row
+      .eight.offset-by-four.columns
+        %h3 Kursy
+    .content
+      - courses.each do |c|
+        .row
+          .four.columns
+            .date
+              = c[:date]
+          .eight.columns
+            = c[:name]
+
+    .row
+      .eight.offset-by-four.columns
+        %h3 Umiejętności
+    .skills
+      - skills.each do |s|
+        .row
+          .eight.offset-by-four.columns
+            .name
+              = s[:name]
+            .level
+              .level-icon
+                - if s[:level] == 'średnia znajomość'
+                  - 3.times do
+                    %i.fa.fa-star
+                  - 2.times do
+                    %i.fa.fa-star-o
+                - elsif s[:level] == 'dobra znajomość'
+                  - 4.times do
+                    %i.fa.fa-star
+                  - 1.times do
+                    %i.fa.fa-star-o
+                - elsif s[:level] == 'bardzo dobra znajomość'
+                  - 5.times do
+                    %i.fa.fa-star
+              .level-text
+                = s[:level]

@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin-ext';
+
 // plugins
   @import "plugins/normalize";
   @import "plugins/framework";
@@ -12,3 +14,83 @@
   @import "components/tabs";
   @import "components/tooltip";
   @import "components/upload";
+
+  $primaryColor: #E74C3C;
+
+//
+  body {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px 0;
+  }
+  .wf { width: 100%; float: left; }
+  .responsive-image { @extend .wf; height: auto; }
+  .circle { border-radius: 50%; }
+  .text-center { @extend .wf; text-align: center; }
+
+  .about-section {
+    .about-image {
+      border: 5px solid $primaryColor;
+    }
+    h2 {
+      @extend .text-center;
+      margin: 2rem 0 0 0;
+    }
+    i {
+      font-size: 2rem;
+      font-weight: 800;
+      margin: 0 1rem 0 0;
+    }
+  }
+  .alert {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: $primaryColor;
+    @extend .text-center;
+  }
+  h3 {
+    color: $primaryColor;
+  }
+
+  .content {
+    .row {
+      margin: 0 0 2rem 0;
+      .four {
+        border-right: 2px solid rgba(0,0,0,0.1);
+      }
+    }
+    .company-name {
+      @extend .text-center;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .skill-name {
+      @extend .text-center;
+      font-size: 1.5rem;
+    }
+    .date {
+      @extend .text-center;
+    }
+    .function {
+      font-size: 2rem;
+      font-weight: 800;
+      @extend .wf;
+    }
+  }
+
+  .skills {
+    .name {
+      float: left;
+    }
+    .eight {
+      margin-bottom: 2rem;
+    }
+    .level {
+      float: right;
+      .level-icon {
+        text-align: right;
+      }
+      .level-text {
+        font-size: 1.2rem;
+      }
+    }
+  }

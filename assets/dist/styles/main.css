@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin-ext";
 /**
  * 1. Set default font family to sans-serif.
  * 2. Prevent iOS text size adjust after orientation change, without disabling
@@ -1075,62 +1076,42 @@ there.
 }
 
 .fa-spin {
-  -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;
 }
 
 .fa-pulse {
-  -webkit-animation: fa-spin 1s infinite steps(8);
   animation: fa-spin 1s infinite steps(8);
-}
-
-@-webkit-keyframes fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
 }
 @keyframes fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
-  -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 
@@ -3750,17 +3731,12 @@ there.
   backface-visibility: hidden;
   margin: 0;
   overflow: hidden;
-  transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
-  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
 .fs-carousel-enabled.fs-carousel-auto_height .fs-carousel-canister {
-  transition: height 0.5s ease, -webkit-transform 0.5s ease;
   transition: height 0.5s ease, transform 0.5s ease;
-  transition: height 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
 }
 
 .fs-carousel-enabled .fs-carousel-item {
@@ -4282,7 +4258,6 @@ there.
 }
 
 .fs-lightbox-mobile .fs-lightbox-image_container {
-  -webkit-transform: translate3D(0, 0, 0);
   transform: translate3D(0, 0, 0);
 }
 
@@ -4392,29 +4367,15 @@ there.
 }
 
 .fs-lightbox-loading_icon:after {
-  -webkit-animation: fs-lightbox-loading-spin 0.75s linear infinite;
   animation: fs-lightbox-loading-spin 0.75s linear infinite;
   border: 5px solid transparent;
   border-top-color: #333333;
 }
-
-@-webkit-keyframes fs-lightbox-loading-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
 @keyframes fs-lightbox-loading-spin {
   from {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -4746,14 +4707,11 @@ there.
 
 .fs-lightbox-mobile .fs-lightbox-image {
   transition: none !important;
-  -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 
 .fs-lightbox-mobile.fs-lightbox-animated .fs-lightbox-image {
-  transition: -webkit-transform 0.25s ease-out !important;
   transition: transform 0.25s ease-out !important;
-  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out !important;
 }
 
 .fs-lightbox-mobile.fs-lightbox-inline .fs-lightbox-content,
@@ -4805,15 +4763,11 @@ there.
   background: #222222;
   box-shadow: 0 0 25px #000000;
   padding: 15px 15px 65px;
-  -webkit-transform: translate(0, 100%);
   transform: translate(0, 100%);
-  transition: -webkit-transform 0.25s ease;
   transition: transform 0.25s ease;
-  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
 }
 
 .fs-lightbox-touch.fs-lightbox-caption_open .fs-lightbox-meta {
-  -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 
@@ -5028,4 +4982,82 @@ there.
   background: #ffc7c6;
   border-color: #ff6666;
   color: #ff0000;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 20px 0;
+}
+
+.wf, .responsive-image, .text-center, .about-section h2, .alert, .content .company-name, .content .skill-name, .content .date, .content .function {
+  width: 100%;
+  float: left;
+}
+
+.responsive-image {
+  height: auto;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.text-center, .about-section h2, .alert, .content .company-name, .content .skill-name, .content .date {
+  text-align: center;
+}
+
+.about-section .about-image {
+  border: 5px solid #E74C3C;
+}
+.about-section h2 {
+  margin: 2rem 0 0 0;
+}
+.about-section i {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 1rem 0 0;
+}
+
+.alert {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #E74C3C;
+}
+
+h3 {
+  color: #E74C3C;
+}
+
+.content .row {
+  margin: 0 0 2rem 0;
+}
+.content .row .four {
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
+}
+.content .company-name {
+  font-size: 2rem;
+  font-weight: 800;
+}
+.content .skill-name {
+  font-size: 1.5rem;
+}
+.content .function {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.skills .name {
+  float: left;
+}
+.skills .eight {
+  margin-bottom: 2rem;
+}
+.skills .level {
+  float: right;
+}
+.skills .level .level-icon {
+  text-align: right;
+}
+.skills .level .level-text {
+  font-size: 1.2rem;
 }
